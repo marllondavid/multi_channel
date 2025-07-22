@@ -107,7 +107,7 @@ class _LoginPageState extends State<LoginPage> {
                           child: ElevatedButton(
                             onPressed: () {
                               if (_formKey.currentState?.validate() == true) {
-                                // Formulário validado
+                                context.go('/home');
                               }
                             },
                             style: ElevatedButton.styleFrom(

@@ -16,7 +16,9 @@ class SharedBackground extends StatelessWidget {
               painter: BackgroundPainter(),
             ),
           ),
-          child, // O conteúdo da página, como LoginPage ou ResetPasswordPage
+          Positioned.fill(
+            child: child,
+          ),
         ],
       ),
     );

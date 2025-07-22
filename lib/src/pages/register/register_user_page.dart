@@ -70,7 +70,6 @@ class _RegisterUserPageState extends State<RegisterUserPage> {
                           ),
                         ),
                         const SizedBox(height: 20),
-                        // Nome e Telefone
                         Row(
                           children: [
                             Expanded(
@@ -96,7 +95,6 @@ class _RegisterUserPageState extends State<RegisterUserPage> {
                           ],
                         ),
                         const SizedBox(height: 16),
-                        // Endereço
                         Text(
                           'Endereço',
                           style: TextStyle(
@@ -172,7 +170,6 @@ class _RegisterUserPageState extends State<RegisterUserPage> {
                           ],
                         ),
                         const SizedBox(height: 20),
-                        // Login
                         Text(
                           'Login',
                           style: TextStyle(
@@ -224,9 +221,7 @@ class _RegisterUserPageState extends State<RegisterUserPage> {
                             ),
                             Expanded(
                               child: GestureDetector(
-                                onTap: () {
-                                  // Abrir Termos e Condições
-                                },
+                                onTap: () {},
                                 child: Text(
                                   'Eu li e aceito os Termos e Condições',
                                   style: TextStyle(
@@ -239,7 +234,6 @@ class _RegisterUserPageState extends State<RegisterUserPage> {
                           ],
                         ),
                         const SizedBox(height: 10),
-                        // Mensagem de erro para termos e condições
                         Visibility(
                           visible: _showTermsMessage,
                           child: Container(
@@ -269,7 +263,6 @@ class _RegisterUserPageState extends State<RegisterUserPage> {
                           ),
                         ),
                         const SizedBox(height: 20),
-                        // Botão Registrar-se
                         MouseRegion(
                           onEnter: (_) => setState(() {
                             _isHoveringConnect = true;
@@ -283,7 +276,6 @@ class _RegisterUserPageState extends State<RegisterUserPage> {
                               onPressed: () {
                                 if (_formKey.currentState?.validate() == true &&
                                     _termsAccepted) {
-                                  // Formulário validado
                                 } else if (!_termsAccepted) {
                                   setState(() {
                                     _showTermsMessage = true;
