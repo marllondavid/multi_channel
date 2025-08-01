@@ -20,62 +20,70 @@ class SummaryReportCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final bool isPositive = percentChange >= 0;
+    final screenWidth = MediaQuery.of(context).size.width;
 
     return FadeTransition(
       opacity: fadeAnimation,
-      child: Container(
-        padding: const EdgeInsets.all(16),
-        decoration: BoxDecoration(
-          color: theme.cardColor,
-          borderRadius: BorderRadius.circular(8),
-          border: Border.all(
-            color: theme.dividerColor.withValues(alpha: 0.1),
-          ),
+      child: ConstrainedBox(
+        constraints: BoxConstraints(
+          maxWidth: screenWidth < 600 ? screenWidth * 0.9 : 300,
         ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                Icon(icon, color: theme.colorScheme.primary, size: 20),
-                const SizedBox(width: 8),
-                Text(
-                  title,
-                  style: theme.textTheme.bodySmall?.copyWith(
-                    color: theme.textTheme.bodySmall?.color
-                        ?.withValues(alpha: 0.7),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 8),
-            Text(
-              value,
-              style: theme.textTheme.titleLarge?.copyWith(
-                fontWeight: FontWeight.bold,
+        child: SingleChildScrollView(
+          child: Container(
+            padding: const EdgeInsets.all(12),
+            decoration: BoxDecoration(
+              color: theme.cardColor,
+              borderRadius: BorderRadius.circular(8),
+              border: Border.all(
+                color: theme.dividerColor.withValues(alpha: 0.1),
               ),
             ),
-            const SizedBox(height: 8),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Icon(
-                  isPositive ? Icons.arrow_upward : Icons.arrow_downward,
-                  size: 14,
-                  color: isPositive ? Colors.green : Colors.red,
+                Row(
+                  children: [
+                    Icon(icon, color: theme.colorScheme.primary, size: 20),
+                    const SizedBox(width: 8),
+                    Text(
+                      title,
+                      style: theme.textTheme.bodySmall?.copyWith(
+                        color: theme.textTheme.bodySmall?.color
+                            ?.withValues(alpha: 0.7),
+                      ),
+                    ),
+                  ],
                 ),
+                const SizedBox(height: 8),
                 Text(
-                  '${percentChange.abs().toStringAsFixed(2)}%',
-                  style: TextStyle(
-                    fontSize: 12,
+                  value,
+                  style: theme.textTheme.titleLarge?.copyWith(
                     fontWeight: FontWeight.bold,
-                    color: isPositive ? Colors.green : Colors.red,
                   ),
+                ),
+                const SizedBox(height: 8),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      isPositive ? Icons.arrow_upward : Icons.arrow_downward,
+                      size: 14,
+                      color: isPositive ? Colors.green : Colors.red,
+                    ),
+                    Text(
+                      '${percentChange.abs().toStringAsFixed(2)}%',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                        color: isPositive ? Colors.green : Colors.red,
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
-          ],
+          ),
         ),
       ),
     );

@@ -24,9 +24,8 @@ class ErrorPage extends StatelessWidget {
                 color: Colors.grey,
               ),
               const SizedBox(height: 24),
-
               const Text(
-                'LOJA NÃO ENCONTRADA',
+                '404 NOT FOUND',
                 style: TextStyle(
                   fontSize: 32,
                   fontWeight: FontWeight.bold,
@@ -35,22 +34,18 @@ class ErrorPage extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 20),
-              // Subtítulo ou descrição adicional
-
-              // ElevatedButton.icon(
-              //   onPressed: () {
-              //     // Ação ao pressionar o botão, por exemplo, recarregar a página
-              //     // Você pode ajustar a ação conforme necessário
-              //     Navigator.of(context).popUntil((route) => route.isFirst);
-              //   },
-              //   icon: const Icon(Icons.refresh),
-              //   label: const Text('Recarregar'),
-              //   style: ElevatedButton.styleFrom(
-              //     padding:
-              //         const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-              //     textStyle: const TextStyle(fontSize: 16),
-              //   ),
-              // ),
+              ElevatedButton.icon(
+                onPressed: () {
+                  Navigator.of(context).popUntil((route) => route.isFirst);
+                },
+                icon: const Icon(Icons.refresh),
+                label: const Text('Recarregar'),
+                style: ElevatedButton.styleFrom(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                  textStyle: const TextStyle(fontSize: 16),
+                ),
+              ),
             ],
           ),
         ),

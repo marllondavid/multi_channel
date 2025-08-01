@@ -3,7 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:multi_channel/src/core/ui/widgets/legend_item.dart';
 
 class CategoryPieChart extends StatefulWidget {
-  const CategoryPieChart({super.key});
+  final String? title;
+  const CategoryPieChart({
+    super.key,
+    this.title,
+  });
 
   @override
   State<CategoryPieChart> createState() => _CategoryPieChartState();
@@ -21,8 +25,8 @@ class _CategoryPieChartState extends State<CategoryPieChart> {
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-            const Text(
-              'Vendas por Canais',
+            Text(
+              widget.title != null ? widget.title! : '',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
             ),
             const SizedBox(height: 16),

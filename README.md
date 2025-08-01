@@ -11,12 +11,24 @@ Projeto criado como parte do meu portfólio para demonstrar habilidades em Flutt
 
 - Layout responsivo (Web-first)
 - Animações suaves e componentes reutilizáveis
--  Gráfico de linha e pizza (usando fl_chart)
-- Cards de relatórios por canal (Web, App, Físico)
+- Gráfico de linha, pizza e barras (usando fl_chart)
+- Página para gerenciar os Clientes
+- Página para gerenciar os Pedidos
+- Relatório com Filtros de dias
+- Todo relatório por canais
+- Cards de relatórios por canal 
+- Central de mensagens para com os clientes
 - Controle de Dark Mode via Provider
 - Estrutura modular com ThemeProvider
 - Drawer com navegação lateral
 - Código limpo e de fácil manutenção
+
+<p align="center"> <img src="screenshots/channels.png" alt="Dashboard Light Mode" width="600"/> </p>
+<p align="center"> <img src="screenshots/client.png" alt="Dashboard Light Mode" width="600"/> </p>
+<p align="center"> <img src="screenshots/order.png" alt="Dashboard Light Mode" width="600"/> </p>
+<p align="center"> <img src="screenshots/login.png" alt="Dashboard Light Mode" width="600"/> </p>
+<p align="center"> <img src="screenshots/message.png" alt="Dashboard Light Mode" width="600"/> </p>
+<p align="center"> <img src="screenshots/report.png" alt="Dashboard Light Mode" width="600"/> </p>
 
 
 ## Como executar o projeto

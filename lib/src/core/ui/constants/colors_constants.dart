@@ -9,6 +9,7 @@ sealed class ColorsConstants {
   static const grey = Color(0xFF969696);
   static const greyDark = Color(0xFF6E7580);
   static const containerWhite = Color(0xFFF9FAFB);
+  static const mercadoLivre = Color.fromARGB(255, 227, 204, 2);
   static const copyLink = Color.fromARGB(255, 78, 111, 229);
   static const whatsApp = Color(0xFF1EA851);
   static const green = Color.fromARGB(255, 32, 209, 97);

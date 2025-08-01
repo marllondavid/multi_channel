@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
 import 'package:multi_channel/src/core/ui/constants/colors_constants.dart';
 
 class HomeDrawer extends StatelessWidget {
@@ -21,34 +23,61 @@ class HomeDrawer extends StatelessWidget {
             DrawerHeader(
               decoration: BoxDecoration(color: ColorsConstants.primaryColor),
               child: Text(
-                'MultiCanal Dashboard',
+                'MultiCanal',
                 style: TextStyle(color: Colors.white, fontSize: 18),
               ),
             ),
             ListTile(
-              leading: const Icon(Icons.dashboard),
-              title: const Text('Dashboard'),
+              leading: const Icon(Icons.home),
+              title: const Text('Início'),
               onTap: () {
-                Navigator.of(context).pop();
+                context.go('/home');
+              },
+            ),
+            ListTile(
+              leading: const Icon(FontAwesomeIcons.message),
+              title: const Text('Central de Mensagens'),
+              onTap: () {
+                context.go('/message');
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.people),
+              title: const Text('Clientes'),
+              onTap: () {
+                context.go('/list-client');
               },
             ),
             ListTile(
               leading: const Icon(Icons.shopping_cart),
               title: const Text('Pedidos'),
               onTap: () {
-                Navigator.of(context).pop();
+                context.go('/list-pedido');
               },
             ),
             ListTile(
               leading: const Icon(Icons.analytics),
               title: const Text('Relatórios'),
               onTap: () {
-                Navigator.of(context).pop();
+                context.go('/report');
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.shopify_sharp),
+              title: const Text('Canais'),
+              onTap: () {
+                context.go('/channels');
               },
             ),
             Spacer(),
             SwitchListTile(
-              title: const Text('Modo Escuro'),
+              title: const Text(
+                'Modo Escuro',
+                style: TextStyle(
+                  fontSize: 13,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
               value: isDarkMode,
               onChanged: onThemeChanged,
               secondary: const Icon(Icons.dark_mode),

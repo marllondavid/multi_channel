@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:multi_channel/src/core/ui/widgets/notification_center.dart';
+import 'package:multi_channel/src/core/ui/widgets/sales_bar_chart.dart';
+import 'package:multi_channel/src/core/ui/widgets/sales_line_chart.dart';
 import 'package:provider/provider.dart';
 import 'package:multi_channel/src/providers/theme_provider.dart';
 import 'package:multi_channel/src/core/ui/widgets/home_drawer.dart';
 import 'package:multi_channel/src/core/ui/widgets/shared_scaffold.dart';
-import 'package:multi_channel/src/core/ui/widgets/category_pie_chart.dart';
-import 'package:multi_channel/src/core/ui/widgets/product_sales_chart.dart';
 import 'package:multi_channel/src/core/ui/widgets/sumary_cards_section.dart';
 
 class HomePage extends StatefulWidget {
@@ -42,7 +43,7 @@ class _HomePageState extends State<HomePage>
     final themeProvider = Provider.of<ThemeProvider>(context);
 
     return SharedScaffold(
-      title: 'MultiCanal Dashboard',
+      title: 'MultiCanal de Vendas',
       drawer: HomeDrawer(
         isDarkMode: themeProvider.isDarkMode,
         onThemeChanged: themeProvider.toggleTheme,
@@ -53,10 +54,53 @@ class _HomePageState extends State<HomePage>
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SummaryCardsSection(fadeAnimation: _fadeAnimation),
-            const SizedBox(height: 16),
-            const ProductSalesChart(),
-            const SizedBox(height: 16),
-            const CategoryPieChart(),
+            const SizedBox(height: 12),
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Theme.of(context).cardColor,
+                borderRadius: BorderRadius.circular(8),
+                boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 6)],
+              ),
+              child: const SalesLineChart(),
+            ),
+            const SizedBox(height: 12),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    height: 320,
+                    padding: const EdgeInsets.all(16),
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).cardColor,
+                      borderRadius: BorderRadius.circular(8),
+                      boxShadow: [
+                        BoxShadow(color: Colors.black12, blurRadius: 6)
+                      ],
+                    ),
+                    child: const NotificationCenter(),
+                  ),
+                ),
+                const SizedBox(width: 16),
+                Expanded(
+                  flex: 2,
+                  child: Container(
+                    height: 320,
+                    padding: const EdgeInsets.all(16),
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).cardColor,
+                      borderRadius: BorderRadius.circular(8),
+                      boxShadow: [
+                        BoxShadow(color: Colors.black12, blurRadius: 6)
+                      ],
+                    ),
+                    child: const SalesBarChart(),
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),

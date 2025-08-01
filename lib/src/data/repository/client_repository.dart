@@ -1,0 +1,80 @@
+import 'package:multi_channel/src/data/models/client_model.dart';
+
+class ClientRepository {
+  final List<ClienteModel> _clientes = [
+    ClienteModel(
+      nome: 'João da Silva',
+      cpfCnpj: '123.456.789-00',
+      telefone: '(11) 91234-5678',
+      cep: '25469-000',
+      rua: 'Rua das Flores',
+      numero: '123',
+      complemento: 'Em cima do Outbêco',
+      bairro: 'Copacabana',
+      estado: 'Rio de Janeiro',
+      cidade: 'Rio de Janeiro',
+      email: 'joao@teste.com',
+      origem: 'Loja Física',
+    ),
+    ClienteModel(
+      nome: 'Get Start',
+      cpfCnpj: '00.000.000/0001-91',
+      telefone: '(21) 99876-5432',
+      cep: '25987-000',
+      rua: 'Av. Brasil',
+      numero: '456',
+      complemento: 'Passarela 3',
+      bairro: 'Leblon',
+      estado: 'Rio de Janeiro',
+      cidade: 'Rio de Janeiro',
+      email: 'get@start.br',
+      origem: 'Mercado Livre',
+    ),
+    ClienteModel(
+      nome: 'Maria Oliveira',
+      cpfCnpj: '156.789.456-91',
+      telefone: '(21) 96582-7896',
+      cep: '69878-000',
+      rua: 'Av. Brasil',
+      numero: '456',
+      complemento: '',
+      bairro: 'Bravo',
+      estado: 'São Paulo',
+      cidade: 'São José',
+      email: 'maria@oliveira.get',
+      origem: 'Amzon',
+    ),
+    ClienteModel(
+      nome: 'José Oliveira',
+      cpfCnpj: '123.789.456-91',
+      telefone: '(21) 98545-7896',
+      cep: '69878-000',
+      rua: 'Av. Ulman',
+      numero: '456',
+      complemento: '',
+      bairro: 'Bravo',
+      estado: 'São Paulo',
+      cidade: 'São José',
+      email: 'jose@oliveira.get',
+      origem: 'Mercado Livre',
+    ),
+    ClienteModel(
+      nome: 'Jorge David',
+      cpfCnpj: '356.987.456-92',
+      telefone: '(21) 98545-7896',
+      cep: '25987-000',
+      rua: 'Av. Ulman',
+      numero: '36',
+      complemento: '',
+      bairro: 'Santa',
+      estado: 'Rio Grande do Sul',
+      cidade: 'Camboriú',
+      email: 'jorge@oliveira.get',
+      origem: 'Shopee',
+    ),
+  ];
+
+  List<ClienteModel> getClientes() {
+    return _clientes;
+  }
+}

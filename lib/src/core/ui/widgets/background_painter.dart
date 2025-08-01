@@ -6,7 +6,6 @@ class BackgroundPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     final paint = Paint();
 
-    // Fundo principal com degradê
     paint.shader = LinearGradient(
       colors: [
         Color(0x66A29BFE),
@@ -17,16 +16,13 @@ class BackgroundPainter extends CustomPainter {
     ).createShader(Rect.fromLTWH(0, 0, size.width, size.height));
     canvas.drawRect(Rect.fromLTWH(0, 0, size.width, size.height), paint);
 
-    // Camada 1 - Forma orgânica
-    paint.color = Color(0x66A29BFE); // Púrpura translúcido
+    paint.color = Color(0x66A29BFE);
     canvas.drawPath(_getFirstLayerPath(size), paint);
 
-    // Camada 2 - Forma orgânica
-    paint.color = ColorsConstants.primaryColor; // Cor primária
+    paint.color = ColorsConstants.primaryColor;
     canvas.drawPath(_getSecondLayerPath(size), paint);
 
-    // Camada 3 - Forma orgânica
-    paint.color = Color(0x6683EAF1); // Azul esverdeado translúcido
+    paint.color = Color(0x6683EAF1);
     canvas.drawPath(_getThirdLayerPath(size), paint);
   }
 

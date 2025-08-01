@@ -82,9 +82,7 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                           }),
                           child: ElevatedButton(
                             onPressed: () {
-                              if (_formKey.currentState?.validate() == true) {
-                                // Formulário validado
-                              }
+                              if (_formKey.currentState?.validate() == true) {}
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: _isHoveringConnect

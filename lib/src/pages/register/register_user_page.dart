@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:multi_channel/src/core/ui/constants/colors_constants.dart';
+import 'package:multi_channel/src/core/ui/widgets/alert_terms.dart';
 import 'package:multi_channel/src/core/ui/widgets/multi_field.dart';
 import 'package:validatorless/validatorless.dart';
 
@@ -221,7 +222,22 @@ class _RegisterUserPageState extends State<RegisterUserPage> {
                             ),
                             Expanded(
                               child: GestureDetector(
-                                onTap: () {},
+                                onTap: () async {
+                                  bool? accepted = await showDialog<bool>(
+                                    context: context,
+                                    builder: (context) => const AlertTerms(),
+                                  );
+
+                                  if (accepted == true) {
+                                    setState(() {
+                                      _termsAccepted = true;
+                                    });
+                                  } else {
+                                    setState(() {
+                                      _termsAccepted = false;
+                                    });
+                                  }
+                                },
                                 child: Text(
                                   'Eu li e aceito os Termos e Condições',
                                   style: TextStyle(
@@ -292,7 +308,12 @@ class _RegisterUserPageState extends State<RegisterUserPage> {
                                   borderRadius: BorderRadius.circular(5.0),
                                 ),
                               ),
-                              child: const Text('Registrar-se'),
+                              child: const Text(
+                                'Registrar-se',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                ),
+                              ),
                             ),
                           ),
                         ),

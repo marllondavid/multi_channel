@@ -119,7 +119,12 @@ class _LoginPageState extends State<LoginPage> {
                                 borderRadius: BorderRadius.circular(5.0),
                               ),
                             ),
-                            child: Text('Conecte-se'),
+                            child: Text(
+                              'Conecte-se',
+                              style: TextStyle(
+                                color: Colors.white,
+                              ),
+                            ),
                           ),
                         ),
                         SizedBox(height: 20),
@@ -132,7 +137,6 @@ class _LoginPageState extends State<LoginPage> {
                           }),
                           child: OutlinedButton(
                             onPressed: () {
-                              // Ação para registrar-se
                               context.go('/register');
                             },
                             style: OutlinedButton.styleFrom(
