@@ -23,12 +23,12 @@ Projeto criado como parte do meu portfólio para demonstrar habilidades em Flutt
 - Drawer com navegação lateral
 - Código limpo e de fácil manutenção
 
-<p align="center"> <img src="screenshots/channels.png" alt="Dashboard Light Mode" width="600"/> </p>
-<p align="center"> <img src="screenshots/client.png" alt="Dashboard Light Mode" width="600"/> </p>
-<p align="center"> <img src="screenshots/order.png" alt="Dashboard Light Mode" width="600"/> </p>
-<p align="center"> <img src="screenshots/login.png" alt="Dashboard Light Mode" width="600"/> </p>
-<p align="center"> <img src="screenshots/message.png" alt="Dashboard Light Mode" width="600"/> </p>
-<p align="center"> <img src="screenshots/report.png" alt="Dashboard Light Mode" width="600"/> </p>
+<p align="center"> <img src="screenshots/channels.png" alt="Canais" width="600"/> </p>
+<p align="center"> <img src="screenshots/client.png" alt="Clientes" width="600"/> </p>
+<p align="center"> <img src="screenshots/order.png" alt="Pedidos" width="600"/> </p>
+<p align="center"> <img src="screenshots/login.png" alt="Login" width="600"/> </p>
+<p align="center"> <img src="screenshots/message.png" alt="Central de mensagens" width="600"/> </p>
+<p align="center"> <img src="screenshots/report.png" alt="Relatórios" width="600"/> </p>
 
 
 ## Como executar o projeto
